@@ -1,20 +1,8 @@
-// // worker saga
-// // function* workerSaga() {
-// // console.log("object");
-// // yield put({ type: "ACTION_FROM_WORKER" });
-// // }
+import { all } from 'redux-saga/effects';
 
-// // watcher saga
-// function* rootSaga() {
-//   // yield takeEvery("HELLO", workerSaga);
-//   // yield take('LOGIN');
-//   // yield call(workerSaga)
-//   // yield take('LOGOUT')
-//   yield takeEvery(IMAGES.LOAD, handleImagesLoad);
-// }
+import imagesSaga from './imagesSaga';
+import statsSaga from './statsSaga';
 
-// export default rootSaga;
-
-import imagesSaga from "./imagesSaga";
-
-export default imagesSaga;
+export default function* rootSaga() {
+    yield all([imagesSaga(), statsSaga()]);
+}
