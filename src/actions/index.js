@@ -1,6 +1,6 @@
 import { IMAGES } from "../constants/index";
 
-const loadImahes = () => ({
+const loadImages = () => ({
   type: IMAGES.LOAD
 });
 
@@ -14,4 +14,4 @@ const setError = error => ({
   error
 });
 
-export { loadImahes, setImages, setError };
+export { loadImages, setImages, setError };
